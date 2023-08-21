@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 其他尺寸定义 -->
+
+    <!-- 导航抽屉头部的高度 -->
+    <dimen name="nav_header_height">160dp</dimen>
+</resources>
