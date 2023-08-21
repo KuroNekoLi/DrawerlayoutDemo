@@ -5,20 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 主內容區域 -->
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:navGraph="@navigation/nav_graph" />
+        android:orientation="vertical">
 
-    <!-- 左側滑出的導航菜單 -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:id="@+id/custom_hamburger_icon"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:src="@drawable/icon_menu_n" />
+
+            <TextView
+                android:id="@+id/fragment_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:navGraph="@navigation/nav_graph" />
+
+    </LinearLayout>
+
+    <!-- 左侧滑出的導航菜單 -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
+        style="@style/MyNavigationViewStyle"
+        android:layout_width="210dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="#182632"
         app:headerLayout="@layout/nav_header"
+        app:itemHorizontalPadding="32dp"
+        app:itemIconPadding="16dp"
         app:menu="@menu/nav_menu" />
+
 </androidx.drawerlayout.widget.DrawerLayout>
