@@ -22,6 +22,9 @@
         android:label="Profile"
         tools:layout="@layout/fragment_profile">
         <!-- Add actions here if needed -->
+        <action
+            android:id="@+id/action_nav_profile_to_profileDetailFragment"
+            app:destination="@id/profileDetailFragment" />
     </fragment>
 
     <fragment
@@ -31,5 +34,10 @@
         tools:layout="@layout/fragment_settings">
         <!-- Add actions here if needed -->
     </fragment>
+    <fragment
+        android:id="@+id/profileDetailFragment"
+        android:name="com.example.drawerlayoutdemo.ProfileDetailFragment"
+        android:label="fragment_profile_detail"
+        tools:layout="@layout/fragment_profile_detail" />
 
 </navigation>
