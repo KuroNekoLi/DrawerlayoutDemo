@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity
                 ImageView customHamburgerIcon = customToolbar.findViewById(R.id.custom_hamburger_icon);
                 TextView fragmentTitle = customToolbar.findViewById(R.id.fragment_title);
 
-                if(destination.getId() == R.id.nav_home || destination.getId() == R.id.nav_settings) {
+                if(destination.getId() == R.id.nav_home || destination.getId() == R.id.nav_settings || destination.getId()==R.id.nav_profile) {
                     customHamburgerIcon.setImageResource(R.drawable.icon_menu_n);  // 漢堡圖示
                 } else {
                     customHamburgerIcon.setImageResource(R.drawable.icon_back_n);  // 返回圖示
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 NavDestination currentDestination = navController.getCurrentDestination();
                 if (currentDestination != null) {
-                    if (currentDestination.getId() == R.id.nav_home || currentDestination.getId() == R.id.nav_settings) {
+                    if (currentDestination.getId() == R.id.nav_home || currentDestination.getId() == R.id.nav_settings || currentDestination.getId()==R.id.nav_profile) {
                         // 開啟或關閉 drawer
                         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                             drawerLayout.closeDrawer(GravityCompat.START);
